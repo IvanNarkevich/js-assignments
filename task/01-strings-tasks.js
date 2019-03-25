@@ -201,8 +201,8 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-	var horizontal = repeatString('─', width - 2);
-    var vertical = "│" + repeatString(' ', width - 2) + "│\n";
+	let horizontal = repeatString('─', width - 2);
+    let vertical = "│" + repeatString(' ', width - 2) + "│\n";
 
     let rectangle = "┌" + horizontal + "┐\n";
     rectangle += repeatString(vertical, height - 2);
@@ -228,10 +228,10 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-	var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-	var substitutes = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
-	var output = '';
-	for (var i = 0; i < str.length; i++)
+	const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+	const substitutes = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+	let output = '';
+	for (let i = 0; i < str.length; i++)
 	{
 		if (letters.indexOf(str[i]) != -1)
 		{
@@ -288,7 +288,7 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-	var cards = ['A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣','A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦', 'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥', 'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'];
+	const cards = ['A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣','A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦', 'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥', 'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'];
     return cards.indexOf(value);
 }
 
